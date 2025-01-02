@@ -17,7 +17,7 @@
             padding: 0px;
             margin: 0px;
             text-decoration: none;
-            list-style: none;
+            /*list-style: none;*/
             border-style: none;
         }
 
@@ -54,6 +54,7 @@
 
         .nav {
             display: flex;
+            list-style: none;
             gap: 72px;
         }
 
@@ -147,9 +148,11 @@
 
         .article {
             display: flex;
-            align-items: center;
+            align-items: start;
             flex-wrap: wrap;
+            background-color: #FFBC39;
         }
+
 
         .cabecera {
             background-image: url(/img/alfajores-de-maicena.jpg);
@@ -174,7 +177,7 @@
             margin-bottom: 10px;
         }
 
-        .cabecera.txtautor {
+        .cabecera .txtautor {
             display: flex;
             justify-content: center;
             color: #F6F0E4;
@@ -197,8 +200,10 @@
             flex-direction: column;
             flex-wrap: wrap;
             color: #64022D;
-            padding: 45px;
-            padding-right: 800px;
+            padding: 55px;
+            padding-bottom: 5px;
+            text-align: center;
+            /*padding-right: 800px;*/
             background-color: #FFBC39;
         }
 
@@ -218,39 +223,87 @@
         /*INGREDIENTES estilos*/
         .ingredientes {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: wrap;
             color: #64022D;
             padding: 45px;
-            padding-right: 800px;
+            padding-top: 35px;
+            width: 100%;
+            justify-content: center;
             background-color: #FFBC39;
         }
 
+        .txtIngredientes {
+            font-size: 12pt;
+            font-weight: 400;
+            margin-bottom: 10px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(100, 2, 45, 0.5);
+            color: #F6F0E4;
+            border-radius: 15%;
+        }
+
         .titleIngredientes {
-            font-size: 20pt;
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 10px;
         }
 
         .ulIngredientes {
-            font-size: 12pt;
+            font-size: 11pt;
             font-weight: 400;
             margin-bottom: 10px;
+        }
+
+        /*IMAGEN DENTRO DE INGREDIENTES*/
+        figure {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /*IMAGEN estilos*/
+        .alfajorFoto {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            /*margin: 20px;*/
+            object-fit: cover;
+        }
+
+        figcaption {
+            display: flex;
+            text-wrap: wrap;
+            justify-content: center;
+            color: #64022D;
+            font-size: 12pt;
+            padding-top: 20px;
+            font-style: italic;
+            font-weight: 600;
         }
 
         /*INSTRUCCIONES estilos*/
         .instrucciones {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: wrap;
             color: #64022D;
-            padding: 45px;
-            padding-right: 800px;
+            padding: 55px;
+            padding-left: 100px;
+            width: 60%;
             background-color: #FFBC39;
         }
 
-       .titleInstrucciones {
-            font-size: 20pt;
+        .titleInstrucciones {
+            font-size: 45px;
+            color: #F6F0E4;
+            text-align: center;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -258,6 +311,7 @@
         .preparaciontitulos {
             font-size: 16pt;
             font-weight: 700;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
 
@@ -267,36 +321,34 @@
             margin-bottom: 10px;
         }
 
-        /*IMAGEN estilos*/
-        .alfajorFoto {
-            height: 200px;
-            width: 200px;
-            border-radius: 50%;
-            margin: 20px;
-            object-fit: cover;
-        }
 
-        figcaption {
-            display: flex;
-            justify-content: center;
-            color: #64022D;
-            font-size: 12pt;
-            font-weight: 400;
-        }
 
         /*ASIDE estilos*/
         .aside {
             display: flex;
             flex-direction: column;
+            justify-content: start;
             flex-wrap: wrap;
             color: #64022D;
             padding: 45px;
-            padding-right: 800px;
             background-color: #FFBC39;
         }
 
+        .txtaside {
+            font-size: 10pt;
+            font-weight: 400;
+            margin-bottom: 10px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(100, 2, 45);
+            color: #F6F0E4;
+            border-radius: 15%;
+        }
+
         .titulo {
-            font-size: 20pt;
+            font-size: 15pt;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -341,7 +393,9 @@
             color: #FFBC39;
         }
 
-
+        .ahref {
+            color: #F15333;
+        }
     </style>
 
 </head>
@@ -376,28 +430,41 @@
 
                 <section class="description">
                     <h2 class="titleDescripcion">Descripción</h2>
-                    <p class="txtDescripcion">Estos alfajores de maicena son suaves, esponjosos y se deshacen en la boca. Una receta clásica argentina que combina el inconfundible sabor del dulce de leche con el toque especial de coco.
-                    ¡Ideales para acompañar el mate o el café!</p>
+                    <p class="txtDescripcion">Estos alfajores de maicena son suaves, esponjosos y se deshacen en la
+                        boca. Una receta clásica argentina que combina el inconfundible sabor del dulce de leche con el
+                        toque especial de coco.
+                        ¡Ideales para acompañar el mate o el café!</p>
                 </section>
 
                 <section class="ingredientes">
-                    <h2 class="titleIngredientes">Ingredientes tapas</h2>
-                    <ul class="ulIngredientes">
-                        <li>200g. de harina 0000</li>
-                        <li>300g. de maicena</li>
-                        <li>200g. de mantequilla a temperatura ambiente</li>
-                        <li>150g. de azucar glas</li>
-                        <li>3 yemas de huevo</li>
-                        <li>1 cdta. de esencia de vainilla</li>
-                        <li>1 cdta. de polvo para hornear</li>
-                        <li>Ralladura de limón (opcional)</li>
-                    </ul>
+                    <figure>
+                        <img class="alfajorFoto" src="/img/foto-alfajor.png" alt="alfajor de maicena">
+                        <figcaption>Los mejores alfajores de maicena</figcaption>
+                    </figure>
 
-                    <h2 class="titleIngredientes">Ingredientes relleno y decoración</h2>
-                    <ul class="ulIngredientes">
-                        <li>300g. de dulce de le che (preferentemente pastelero)</li>
-                        <li>Coco rallado (cantidad necesaria)</li>
-                    </ul>
+                    <div class="txtIngredientes">
+
+                        <h2 class="titleIngredientes">Ingredientes tapas</h2>
+                        <ul class="ulIngredientes">
+                            <li>200g. de harina 0000</li>
+                            <li>300g. de maicena</li>
+                            <li>200g. de mantequilla a temperatura ambiente</li>
+                            <li>150g. de azucar glas</li>
+                            <li>3 yemas de huevo</li>
+                            <li>1 cdta. de esencia de vainilla</li>
+                            <li>1 cdta. de polvo para hornear</li>
+                            <li>Ralladura de limón (opcional)</li>
+                        </ul>
+
+                        <h2 class="titleIngredientes">Ingredientes relleno y decoración</h2>
+                        <ul class="ulIngredientes">
+                            <li>300g. de dulce de le che (preferentemente pastelero)</li>
+                            <li>Coco rallado (cantidad necesaria)</li>
+                        </ul>
+                    </div>
+
+
+
 
                 </section>
 
@@ -435,28 +502,28 @@
                 </section>
 
 
-                <figure>
-                    <img class="alfajorFoto" src="/img/foto-alfajor.png" alt="alfajor de maicena">
-                    <figcaption>Los mejores alfajores de maicena</figcaption>
-                </figure>
+
 
                 <aside class="aside">
-                    <h2 class="titulo">Tiempo de preparación</h2>
-                    <ul class="asideinfo">
-                        <li>Preparación de la masa: 20 minutos</li>
-                        <li>Reposo de la masa: 30 minutos</li>
-                        <li>Corte de las tapas: 15 minutos</li>
-                        <li>Horneado: 8-10 minutos (por tanda)</li>
-                        <li>Relleno y decoración: 15 minutos</li>
-                    </ul>
+                    <div class="txtaside">
+                        <h2 class="titulo">Tiempo de preparación</h2>
+                        <ul class="asideinfo">
+                            <li>Preparación de la masa: 20 minutos</li>
+                            <li>Reposo de la masa: 30 minutos</li>
+                            <li>Corte de las tapas: 15 minutos</li>
+                            <li>Horneado: 8-10 minutos (por tanda)</li>
+                            <li>Relleno y decoración: 15 minutos</li>
+                        </ul>
 
 
-                    <h2 class="titulo">Otras Recetas</h2>
-                    <ul class="similares">
-                        <li>Cañoncitos rellenos</li>
-                        <li>Besos de dama</li>
-                        <li>Polvorones</li>
-                    </ul>
+                        <h2 class="titulo">Otras Recetas</h2>
+                        <ul class="similares">
+                            <li> <a href="#" class="ahref">Cañoncitos rellenos</a></li>
+                            <li> <a href="#" class="ahref">Besos de dama</a></li>
+                            <li> <a href="#" class="ahref">Polvorones</a></li>
+                        </ul>
+                    </div>
+
                 </aside>
             </article>
         </main>
